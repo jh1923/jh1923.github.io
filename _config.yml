@@ -21,13 +21,13 @@
 title: julia website
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
-	hi
+ hi
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  jh1923
 
 # Build settings
-theme: minima
+theme: jekyll-theme-leap-day
 plugins:
   - jekyll-feed
 
