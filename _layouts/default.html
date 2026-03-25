@@ -27,6 +27,10 @@
 
   <div id="banner">
     <span id="logo"></span>
+    <a href="{{ '/' | relative_url }}" class="banner-link">home</a>
+    <a href="{{ '/about/' | relative_url }}" class="banner-link">about</a>
+    <a href="{{ '/blog/' | relative_url }}" class="banner-link">blog</a>
+    <a href="https://github.com/jh1923" class="banner-link">github</a>
     <!-- View On GitHub moved to footer -->
     {% if site.show_downloads %}
     <div class="downloads">
