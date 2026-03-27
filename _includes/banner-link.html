@@ -1,0 +1,9 @@
+{% assign link_text = include.text %}
+{% assign link_url = include.url %}
+{% assign page_match = include.page_match | default: link_url %}
+
+{% if page.url == page_match %}
+  <span class="banner-link linked">{{ link_text }}</span>
+{% else %}
+  <a href="{{ link_url | relative_url }}" class="banner-link">{{ link_text }}</a>
+{% endif %}
