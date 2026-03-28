@@ -57,4 +57,38 @@
     line-height: 1;
 }
 
+/* Blog posts list */
+ul.blog-posts {
+    list-style: none;
+    padding: 0;
+}
+
+ul.blog-posts li {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+ul.blog-posts li:first-child {
+    border-top: 1px solid #e0e0e0;
+}
+
+ul.blog-posts .post-date {
+    font-size: 0.85em;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+ul.blog-posts a {
+    font-size: 1.2em;
+    text-decoration: none;
+    color: #333;
+}
+
+ul.blog-posts a:hover {
+    color: #0066cc;
+    text-decoration: underline;
+}
+
 

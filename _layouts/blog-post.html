@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ site.lang | default: " en-US" }}">
+<html lang="{{ site.lang | default: "en-US" }}">
 
 <head>
   <meta charset="utf-8">
@@ -21,26 +21,45 @@
 <body>
 
   <header>
-    <h1>{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
-    <p>{{ page.description | default: site.description | default: site.github.project_tagline }}</p>
+    <h1>{{ page.title | default: site.title }}</h1>
+    <p>{{ page.description | default: site.description }}</p>
   </header>
 
-  {% include banner.html show_downloads=site.show_downloads %}
+  {% include banner.html %}
 
   <div class="wrapper">
     <section>
-      {{ content }}
+      <article>
+        <header class="post-header">
+          <p class="post-meta">
+            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+            {% if page.author %} • {{ page.author }}{% endif %}
+          </p>
+        </header>
 
+        <div class="post-content">
+          {{ content }}
+          <hr></hr>
+        </div>
+
+        <footer class="post-footer">
+          {% if page.tags %}
+          <p class="post-tags"><b>Tags:</b> {% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+          {% endif %}
+        </footer>
+      </article>
+
+      <nav class="post-navigation">
+        <a href="/blog" class="button">← blog</a>
+      </nav>
     </section>
 
-    <!-- table of contents removed -->
     <footer>
       {% if site.github.is_project_page %}
       <p>Project maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
       {% endif %}
       <p><a href="{{ site.github.repository_url }}" class="button fork"><strong>View On GitHub</strong></a></p>
-      <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></small>
-      </p>
+      <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></small></p>
     </footer>
   </div>
 </body>
